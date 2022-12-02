@@ -21,6 +21,7 @@ public class MainApp extends Application
     private static Association monAssociationSelectionnee;
     //private static ObservableList<Sport>mesSports;
     private static Sport monSportSelectionne;
+    
     private static Pratiquer maPratiqueDUneAssociationSelectionnee;
     private static String etat;
     

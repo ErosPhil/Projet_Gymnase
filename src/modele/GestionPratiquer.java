@@ -79,9 +79,7 @@ public class GestionPratiquer {
             Class.forName((pilote));
             conn = DriverManager.getConnection(url,"root","");
             stmt = conn.createStatement();
-
                 req = "DELETE FROM pratiquer WHERE refAsso = '"+prefAsso+"' AND nomSport = '"+ pnomSport +"'";
-
             int nbLigne = stmt.executeUpdate(req);
             stmt.close();
             conn.close();

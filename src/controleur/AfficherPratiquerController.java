@@ -19,6 +19,7 @@ import modele.Association;
 
 
 public class AfficherPratiquerController implements Initializable {
+    
     ObservableList<Association> lesAssociationsDansPratiquer;
     ObservableList<Sport> lesSportsPratiquesParLAssociation;
     @FXML
