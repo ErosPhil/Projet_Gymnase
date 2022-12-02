@@ -17,10 +17,11 @@ public class MainApp extends Application
     private Stage primaryStage;
     private BorderPane rootLayout;
     
-    private static ObservableList<Association>mesAssociations;
+    //private static ObservableList<Association>mesAssociations;
     private static Association monAssociationSelectionnee;
-    private static ObservableList<Sport>mesSports;
+    //private static ObservableList<Sport>mesSports;
     private static Sport monSportSelectionne;
+    private static Pratiquer maPratiqueDUneAssociationSelectionnee;
     private static String etat;
     
     @Override
@@ -81,14 +82,14 @@ public class MainApp extends Application
     }
     
     // Association
-    public static void setMesAssociations(ObservableList<Association> pmesAssociations)
+    /*public static void setMesAssociations(ObservableList<Association> pmesAssociations)
     {
         mesAssociations = pmesAssociations;
     }
     public static ObservableList<Association> getMesAssociations()
     {
         return mesAssociations;
-    }
+    }*/
     
     public static void setMonAssociationSelectionnee(Association pmonAssociationSelectionnee){
         monAssociationSelectionnee = pmonAssociationSelectionnee;
@@ -99,13 +100,13 @@ public class MainApp extends Application
     }
 
     // Sport
-    public static ObservableList<Sport> getMesSports() {
+    /*public static ObservableList<Sport> getMesSports() {
         return mesSports;
     }
 
     public static void setMesSports(ObservableList<Sport> mesSports) {
         MainApp.mesSports = mesSports;
-    }
+    }*/
 
     public static Sport getMonSportSelectionne() {
         return monSportSelectionne;
@@ -114,6 +115,16 @@ public class MainApp extends Application
     public static void setMonSportSelectionne(Sport monSportSelectionne) {
         MainApp.monSportSelectionne = monSportSelectionne;
     }
+
+    //Pratiquer
+    public static Pratiquer getMaPratiqueDUneAssociationSelectionnee() {
+        return maPratiqueDUneAssociationSelectionnee;
+    }
+
+    public static void setMaPratiqueDUneAssociationSelectionnee(Pratiquer maPratiqueDUneAssociationSelectionnee) {
+        MainApp.maPratiqueDUneAssociationSelectionnee = maPratiqueDUneAssociationSelectionnee;
+    }
+    
     
     
     // Main

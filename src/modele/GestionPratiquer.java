@@ -9,7 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class GestionPratiquer {
-    public static ObservableList<Pratiquer> listePratiques()
+    public static ObservableList<Pratiquer> listePratiques() //PAS UTILISÉ
     {
         ObservableList<Pratiquer> lesPratiques = FXCollections.observableArrayList();
         Pratiquer unePratique;
@@ -120,6 +120,38 @@ public class GestionPratiquer {
         catch(Exception e)
         {
             System.out.println("Erreur Requete SQL listeAssociationsDansPratiquer - " + e.getMessage());
+            return null;
+        }
+    }
+    
+    public static ObservableList<Sport> listePratiquesPourUneAssociation(String prefAsso){
+        ObservableList<Sport> lesSports = FXCollections.observableArrayList();
+        Sport unSport;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+            String pilote = "org.gjt.mm.mysql.Driver";
+            String url = new String("jdbc:mysql://localhost/gymnase");
+        String req;
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            req = "SELECT nomSport FROM pratiquer where refAsso = '"+prefAsso+"'";
+            rs = stmt.executeQuery(req);
+            while(rs.next())
+            {
+                unSport = new Sport(rs.getString("nomSport"));
+                lesSports.add(unSport);
+            }
+            stmt.close();
+            conn.close();
+            return lesSports;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur Requete SQL listePratiques - " + e.getMessage());
             return null;
         }
     }

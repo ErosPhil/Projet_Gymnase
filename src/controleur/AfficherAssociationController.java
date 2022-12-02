@@ -97,7 +97,7 @@ public class AfficherAssociationController implements Initializable {
         
         int indexSelectionne = tvAssociations.getSelectionModel().getSelectedIndex();
         tvAssociations.getItems().remove(indexSelectionne);
-        ObservableList<Association> lesAssociations = tvAssociations.getItems();
-        MainApp.setMesAssociations(lesAssociations);
+        //ObservableList<Association> lesAssociations = tvAssociations.getItems();
+        //MainApp.setMesAssociations(lesAssociations);
     }
 }

@@ -55,8 +55,8 @@ public class AfficherSportController implements Initializable {
         
         int indexSelectionne = lvSports.getSelectionModel().getSelectedIndex();
         lvSports.getItems().remove(indexSelectionne);
-        ObservableList<Sport> lesSports = lvSports.getItems();
-        MainApp.setMesSports(lesSports);
+        //ObservableList<Sport> lesSports = lvSports.getItems();
+        //MainApp.setMesSports(lesSports);
     }
     
 }

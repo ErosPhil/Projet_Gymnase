@@ -20,7 +20,7 @@ import modele.Association;
 
 public class AfficherPratiquerController implements Initializable {
     ObservableList<Association> lesAssociationsDansPratiquer;
-    ObservableList<Pratiquer> lesPratiques;
+    ObservableList<Sport> lesSportsPratiquesParLAssociation;
     @FXML
     private ComboBox cmbAssociations;
     @FXML
@@ -34,4 +34,23 @@ public class AfficherPratiquerController implements Initializable {
         cmbAssociations.setItems(lesAssociationsDansPratiquer);
     }    
     
+    @FXML
+    public void handleChoixAssociation(){ //se déclanche lors du choix d'une association du combobox
+    Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
+    lesSportsPratiquesParLAssociation = GestionPratiquer.listePratiquesPourUneAssociation(monAssociation.getRefAsso());
+    lvSports.setItems(lesSportsPratiquesParLAssociation);
+    }
+    
+    @FXML
+    private void handleSupprimer()
+    {
+        Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
+        Sport monSport = lvSports.getSelectionModel().getSelectedItem();
+        GestionPratiquer.SupprimerPratique(monAssociation.getRefAsso() ,monSport.getNomSport());
+        
+        int indexSelectionne = lvSports.getSelectionModel().getSelectedIndex();
+        lvSports.getItems().remove(indexSelectionne);
+        //ObservableList<Pratiquer> lesPratiques = GestionPratiquer.listePratiques();
+        //MainApp.setMesPratiques(lesPratiques);
+    }
 }
