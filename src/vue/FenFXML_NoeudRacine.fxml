@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_NoeudRacineController">
+   <top>
+      <MenuBar prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Données">
+               <items>
+                  <Menu mnemonicParsing="false" text="Ajouter">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Accueil sport salle" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleInsererAssociation" text="Association" />
+                        <MenuItem mnemonicParsing="false" text="Pratique association" />
+                        <MenuItem mnemonicParsing="false" text="Salle" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleInsererSport" text="Sport" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Consulter">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Accueils sport salle" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAfficherAssociations" text="Associations" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAfficherPratiques" text="Pratiques associations" />
+                        <MenuItem mnemonicParsing="false" text="Salles" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAfficherSports" text="Sports" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Réserver" />
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleFermer" text="Fermer" />
+               </items></Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="370.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controleur.AfficherPratiquerController">
+   <children>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="21.0" prefHeight="42.0" prefWidth="300.0" text="Pratiques des associations">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="249.0" layoutY="399.0" mnemonicParsing="false" prefHeight="11.0" prefWidth="72.0" text="Supprimer" />
+      <Button layoutX="155.0" layoutY="399.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="60.0" text="Insérer" />
+      <ComboBox id="cmbAssociations" fx:id="cmbAssociations" layoutX="110.0" layoutY="80.0" prefWidth="150.0" />
+      <ListView id="lvSports" fx:id="lvSports" layoutX="85.0" layoutY="124.0" prefHeight="250.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

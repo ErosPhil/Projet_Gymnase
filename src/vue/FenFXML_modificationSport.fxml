@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="196.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_modifcationSportController">
+   <children>
+      <Button id="btnEnregistrer" fx:id="btnEnregistrer" layoutX="176.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleAjouterSport" text="Enregistrer" />
+      <Label layoutX="24.0" layoutY="50.0" text="Nom Sport" />
+      <TextField id="txtNomSport" fx:id="txtNomSport" layoutX="113.0" layoutY="46.0" prefHeight="25.0" prefWidth="137.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="420.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.AfficherAssociationController">
+   <children>
+      <TableView id="tvAssociations" fx:id="tvAssociations" layoutX="25.0" layoutY="56.0" onDragDetected="#handleChangeItemTvAssociations" prefHeight="300.0" prefWidth="550.0">
+        <columns>
+          <TableColumn id="colonneRef" fx:id="colonneRef" prefWidth="60.0" text="CodeRef" />
+          <TableColumn id="colonneVille" fx:id="colonneVille" prefWidth="95.0" text="Ville" />
+            <TableColumn id="colonneAdresse" fx:id="colonneAdresse" prefWidth="195.0" text="Adresse" />
+            <TableColumn id="colonneNomResponsable" fx:id="colonneNomResponsable" prefWidth="199.0" text="NomResponsable" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="178.0" layoutY="7.0" prefHeight="42.0" prefWidth="244.0" text="Liste des associations">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button id="btnInsererAsso" fx:id="btnInsererAsso" layoutX="411.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleInserer" prefHeight="25.0" prefWidth="70.0" text="Insérer" />
+      <Button id="btnSupprimerAsso" fx:id="btnSupprimerAsso" layoutX="498.0" layoutY="374.0" mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="25.0" prefWidth="77.0" text="Supprimer" />
+   </children>
+</AnchorPane>
