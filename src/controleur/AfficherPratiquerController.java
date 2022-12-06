@@ -1,5 +1,4 @@
 package controleur;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,6 +39,25 @@ public class AfficherPratiquerController implements Initializable {
     Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
     lesSportsPratiquesParLAssociation = GestionPratiquer.listePratiquesPourUneAssociation(monAssociation.getRefAsso());
     lvSports.setItems(lesSportsPratiquesParLAssociation);
+    }
+    
+    @FXML
+    public void handleInserer()
+    {
+        try
+        {
+        oStage = new Stage();
+        oStage.setTitle("Insertion nouvelle pratique");
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_modificationPratiquer.fxml"));
+        AnchorPane rootLayout = (AnchorPane) loader.load();
+        Scene scene = new Scene(rootLayout);
+        oStage.setScene(scene);
+        oStage.show();
+        }
+        catch (IOException e)
+        {
+        System.out.println("Erreur chargement fenetre insert sport: " + e.getMessage());
+        }
     }
     
     @FXML

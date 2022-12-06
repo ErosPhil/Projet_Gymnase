@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="196.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_modificationPratiquerController">
+   <children>
+      <Label layoutX="23.0" layoutY="50.0" text="Code Association" />
+      <Label layoutX="23.0" layoutY="98.0" text="Nom Sport" />
+      <Button id="btnEnregistrer" fx:id="btnEnregistrer" layoutX="176.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleAjouterSport" text="Enregistrer" />
+      <ComboBox id="cmbAssociation" fx:id="cmbAssociation" layoutX="132.0" layoutY="46.0" onAction="#handleChoixAssociation" prefHeight="25.0" prefWidth="108.0" />
+      <ComboBox id="cmbSport" fx:id="cmbSport" layoutX="100.0" layoutY="94.0" prefHeight="25.0" prefWidth="140.0" />
+   </children>
+</AnchorPane>

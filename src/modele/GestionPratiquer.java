@@ -153,4 +153,38 @@ public class GestionPratiquer {
             return null;
         }
     }
+    
+    public static ObservableList<Sport> listeSportsNonPratiquesParUneAssociation(String prefAsso){
+        ObservableList<Sport> lesSports = FXCollections.observableArrayList();
+        Sport unSport;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+            String pilote = "org.gjt.mm.mysql.Driver";
+            String url = new String("jdbc:mysql://localhost/gymnase");
+        String req;
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            req = "SELECT sport.nomSport from sport WHERE nomSport NOT IN (\n" +
+"    SELECT nomSport FROM pratiquer WHERE pratiquer.refAsso = '"+prefAsso+"'\n" +
+"    )";
+            rs = stmt.executeQuery(req);
+            while(rs.next())
+            {
+                unSport = new Sport(rs.getString("nomSport"));
+                lesSports.add(unSport);
+            }
+            stmt.close();
+            conn.close();
+            return lesSports;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur Requete SQL listePratiques - " + e.getMessage());
+            return null;
+        }
+    }
 }

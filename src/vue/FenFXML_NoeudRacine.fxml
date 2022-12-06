@@ -16,7 +16,7 @@
                      <items>
                         <MenuItem mnemonicParsing="false" text="Accueil sport salle" />
                         <MenuItem mnemonicParsing="false" onAction="#handleInsererAssociation" text="Association" />
-                        <MenuItem mnemonicParsing="false" text="Pratique association" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleInsererPratique" text="Pratique association" />
                         <MenuItem mnemonicParsing="false" text="Salle" />
                         <MenuItem mnemonicParsing="false" onAction="#handleInsererSport" text="Sport" />
                      </items>

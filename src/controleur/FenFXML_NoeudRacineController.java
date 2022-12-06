@@ -128,6 +128,26 @@ public class FenFXML_NoeudRacineController implements Initializable {
     }
     
     @FXML
+    public void handleInsererPratique()
+    {
+        // Création de la fenêtre de confirmation
+        try
+        {
+        deuxiemeStage = new Stage();
+        deuxiemeStage.setTitle("Insertion nouvelle pratique");
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_modificationPratiquer.fxml"));
+        AnchorPane rootLayout = (AnchorPane) loader.load();
+        Scene scene = new Scene(rootLayout);
+        deuxiemeStage.setScene(scene);
+        deuxiemeStage.show();
+        }
+        catch (IOException e)
+        {
+        System.out.println("Erreur chargement fenetre insert sport: " + e.getMessage());
+        }
+    }
+    
+    @FXML
     private void handleFermer() // Methode événement sur le menu "Fermer"
     {
         System.exit(0);
