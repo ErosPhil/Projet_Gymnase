@@ -37,4 +37,9 @@ public class Salle {
     public void setTypeRevetement(String typeRevetement) {
         this.typeRevetement = typeRevetement;
     }
+    
+    @Override
+    public String toString() {
+        return refSalle;
+    }
 }

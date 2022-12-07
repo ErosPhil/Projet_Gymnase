@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="196.0" prefWidth="264.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_modificationAccueillirController">
+   <children>
+      <Label layoutX="23.0" layoutY="50.0" text="Ref Salle" />
+      <ComboBox id="cmbSalle" fx:id="cmbSalle" layoutX="102.0" layoutY="47.0" onAction="#handleChoixSalle" prefHeight="25.0" prefWidth="140.0" />
+      <Label layoutX="23.0" layoutY="98.0" text="Nom Sport" />
+      <ComboBox id="cmbSport" fx:id="cmbSport" layoutX="100.0" layoutY="94.0" prefHeight="25.0" prefWidth="140.0" />
+      <Button id="btnEnregistrer" fx:id="btnEnregistrer" layoutX="176.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleAjouterAccueil" text="Enregistrer" />
+   </children>
+</AnchorPane>

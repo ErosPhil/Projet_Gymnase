@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import modele.Sport;
 import modele.GestionSport;
 
-public class FenFXML_modifcationSportController implements Initializable {
+public class FenFXML_modificationSportController implements Initializable {
     
     @FXML
     private TextField txtNomSport;

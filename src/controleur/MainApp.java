@@ -19,10 +19,7 @@ public class MainApp extends Application
     
     //private static ObservableList<Association>mesAssociations;
     private static Association monAssociationSelectionnee;
-    //private static ObservableList<Sport>mesSports;
-    private static Sport monSportSelectionne;
-    
-    private static Pratiquer maPratiqueDUneAssociationSelectionnee;
+
     private static String etat;
     
     @Override
@@ -100,34 +97,6 @@ public class MainApp extends Application
         return monAssociationSelectionnee;
     }
 
-    // Sport
-    /*public static ObservableList<Sport> getMesSports() {
-        return mesSports;
-    }
-
-    public static void setMesSports(ObservableList<Sport> mesSports) {
-        MainApp.mesSports = mesSports;
-    }*/
-
-    public static Sport getMonSportSelectionne() {
-        return monSportSelectionne;
-    }
-
-    public static void setMonSportSelectionne(Sport monSportSelectionne) {
-        MainApp.monSportSelectionne = monSportSelectionne;
-    }
-
-    //Pratiquer
-    public static Pratiquer getMaPratiqueDUneAssociationSelectionnee() {
-        return maPratiqueDUneAssociationSelectionnee;
-    }
-
-    public static void setMaPratiqueDUneAssociationSelectionnee(Pratiquer maPratiqueDUneAssociationSelectionnee) {
-        MainApp.maPratiqueDUneAssociationSelectionnee = maPratiqueDUneAssociationSelectionnee;
-    }
-    
-    
-    
     // Main
     public static void main(String[] args) {
         launch(args);

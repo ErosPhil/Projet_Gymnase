@@ -16,7 +16,6 @@ import modele.GestionPratiquer;
 import modele.Sport;
 import modele.Association;
 
-
 public class AfficherPratiquerController implements Initializable {
     
     ObservableList<Association> lesAssociationsDansPratiquer;
@@ -42,7 +41,7 @@ public class AfficherPratiquerController implements Initializable {
     }
     
     @FXML
-    public void handleInserer()
+    public void handleInsererPratique()
     {
         try
         {
@@ -61,7 +60,7 @@ public class AfficherPratiquerController implements Initializable {
     }
     
     @FXML
-    private void handleSupprimer()
+    private void handleSupprimerPratique()
     {
         Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
         Sport monSport = lvSports.getSelectionModel().getSelectedItem();

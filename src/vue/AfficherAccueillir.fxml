@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.AfficherAccueillirController">
+   <children>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="21.0" prefHeight="42.0" prefWidth="300.0" text="Accueil des sports">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox id="cmbSalles" fx:id="cmbSalles" layoutX="110.0" layoutY="80.0" onAction="#handleChoixSalle" prefWidth="150.0" />
+      <ListView id="lvSports" fx:id="lvSports" layoutX="85.0" layoutY="124.0" prefHeight="250.0" prefWidth="200.0" />
+      <Button id="btnInsererAccueil" fx:id="btnInsererAccueil" layoutX="155.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleInsererAccueil" prefHeight="12.0" prefWidth="60.0" text="Insérer" />
+      <Button id="btnSupprimerAccueil" fx:id="btnSupprimerAccueil" layoutX="249.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleSupprimerAccueil" prefHeight="11.0" prefWidth="72.0" text="Supprimer" />
+   </children>
+</AnchorPane>

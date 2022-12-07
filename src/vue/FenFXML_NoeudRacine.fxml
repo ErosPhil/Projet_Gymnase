@@ -14,7 +14,7 @@
                <items>
                   <Menu mnemonicParsing="false" text="Ajouter">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Accueil sport salle" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleInsererAccueil" text="Accueil sport salle" />
                         <MenuItem mnemonicParsing="false" onAction="#handleInsererAssociation" text="Association" />
                         <MenuItem mnemonicParsing="false" onAction="#handleInsererPratique" text="Pratique association" />
                         <MenuItem mnemonicParsing="false" text="Salle" />
@@ -23,7 +23,7 @@
                   </Menu>
                   <Menu mnemonicParsing="false" text="Consulter">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Accueils sport salle" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleAfficherAccueils" text="Accueils sport salle" />
                         <MenuItem mnemonicParsing="false" onAction="#handleAfficherAssociations" text="Associations" />
                         <MenuItem mnemonicParsing="false" onAction="#handleAfficherPratiques" text="Pratiques associations" />
                         <MenuItem mnemonicParsing="false" text="Salles" />

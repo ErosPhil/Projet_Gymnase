@@ -143,7 +143,47 @@ public class FenFXML_NoeudRacineController implements Initializable {
         }
         catch (IOException e)
         {
-        System.out.println("Erreur chargement fenetre insert sport: " + e.getMessage());
+        System.out.println("Erreur chargement fenetre insert pratique: " + e.getMessage());
+        }
+    }
+    
+    // Accueillir
+    @FXML
+    public void handleAfficherAccueils()
+    {
+        try
+        {
+            deuxiemeStage = new Stage();
+            deuxiemeStage.setTitle("Liste des accueils");
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/AfficherAccueillir.fxml"));
+            AnchorPane rootLayout = (AnchorPane)loader.load();
+            Scene scene = new Scene(rootLayout);
+            deuxiemeStage.setScene(scene);
+            deuxiemeStage.show();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Erreur chargement fenetre afficher accueils : " + e.getMessage());
+        }
+    }
+    
+    @FXML
+    public void handleInsererAccueil()
+    {
+        // Création de la fenêtre de confirmation
+        try
+        {
+        deuxiemeStage = new Stage();
+        deuxiemeStage.setTitle("Insertion nouvel accueil");
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_modificationAccueillir.fxml"));
+        AnchorPane rootLayout = (AnchorPane) loader.load();
+        Scene scene = new Scene(rootLayout);
+        deuxiemeStage.setScene(scene);
+        deuxiemeStage.show();
+        }
+        catch (IOException e)
+        {
+        System.out.println("Erreur chargement fenetre insert accueil: " + e.getMessage());
         }
     }
     

@@ -28,7 +28,7 @@ public class AfficherSportController implements Initializable {
     }
     
     @FXML
-    public void handleInserer()
+    public void handleInsererSport()
     {
         // Création de la fenêtre de confirmation
         try
@@ -48,7 +48,7 @@ public class AfficherSportController implements Initializable {
     }
     
     @FXML
-    private void handleSupprimer()
+    private void handleSupprimerSport()
     {
         Sport monSport = lvSports.getSelectionModel().getSelectedItem();
         GestionSport.SupprimerSport(monSport.getNomSport());
