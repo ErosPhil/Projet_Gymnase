@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_reservationController">
+   <children>
+      <Label layoutX="118.0" layoutY="33.0" text="Effectuer une réservation">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <DatePicker id="dateDate" fx:id="dateDate" layoutX="265.0" layoutY="167.0" prefHeight="25.0" prefWidth="150.0" />
+      <Button id="btnReserver" fx:id="btnReserver" layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleReserver" prefHeight="25.0" prefWidth="75.0" text="Réserver" />
+      <TextField id="txtHeure" fx:id="txtHeure" layoutX="265.0" layoutY="209.0" prefHeight="25.0" prefWidth="150.0" promptText="00:00:00" />
+      <ComboBox id="cmbSalle" fx:id="cmbSalle" layoutX="265.0" layoutY="124.0" prefWidth="150.0" />
+      <ComboBox id="cmbAssociation" fx:id="cmbAssociation" layoutX="265.0" layoutY="250.0" prefWidth="150.0" />
+      <Label layoutX="213.0" layoutY="128.0" text="Salle :" />
+      <Label layoutX="213.0" layoutY="171.0" text="Date :" />
+      <Label layoutX="210.0" layoutY="213.0" text="Heure :" />
+      <Label layoutX="181.0" layoutY="254.0" text="Association :" />
+   </children>
+</AnchorPane>

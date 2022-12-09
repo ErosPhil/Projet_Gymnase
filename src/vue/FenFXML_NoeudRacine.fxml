@@ -32,7 +32,10 @@
                   </Menu>
                </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Réserver" />
+            <Menu mnemonicParsing="false" text="Réserver">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleReserver" text="Effectuer une réservation" />
+               </items></Menu>
             <Menu mnemonicParsing="false" text="Help">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleFermer" text="Fermer" />
