@@ -36,7 +36,7 @@ public class AfficherAccueillirController implements Initializable {
     @FXML
     public void handleChoixSalle(){
     Salle maSalle = (Salle)cmbSalles.getSelectionModel().getSelectedItem();
-    lesSportsAccueillisParLaSalle = GestionAccueillir.listeAccueilsParUneSalle(maSalle.getRefSalle());
+    lesSportsAccueillisParLaSalle = GestionAccueillir.listeAccueilsPourUneSalle(maSalle.getRefSalle());
     lvSports.setItems(lesSportsAccueillisParLaSalle);
     }
     

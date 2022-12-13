@@ -90,7 +90,7 @@ public class GestionAccueillir {
         }
     }
     
-    public static ObservableList<Sport> listeAccueilsParUneSalle(String prefSalle){
+    public static ObservableList<Sport> listeAccueilsPourUneSalle(String prefSalle){
         ObservableList<Sport> lesSports = FXCollections.observableArrayList();
         Sport unSport;
         Connection conn;

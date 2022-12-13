@@ -32,4 +32,72 @@ public class GestionReservation {
             System.out.println("Erreur Requete SQL ajout Reservation - " + e.getMessage());
         }
     }
+    
+    public static ObservableList<Salle> listeSallesCompatiblesAvecUneAsso(String prefAsso){
+        ObservableList<Salle> lesSalles = FXCollections.observableArrayList();
+        Salle uneSalle;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+            String pilote = "org.gjt.mm.mysql.Driver";
+            String url = new String("jdbc:mysql://localhost/gymnase");
+        String req;
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            req = "SELECT DISTINCT salle.refSalle, salle.surface, salle.typeRevetement FROM salle, accueillir, pratiquer "
+                    + "WHERE salle.refSalle = accueillir.refSalle AND accueillir.nomSportAutorise = pratiquer.nomSport "
+                    + "AND pratiquer.refAsso = '"+ prefAsso +"'";
+            rs = stmt.executeQuery(req);
+            while(rs.next())
+            {
+                uneSalle = new Salle(rs.getString("refSalle"),Float.parseFloat(rs.getString("surface")),rs.getString("typeRevetement"));
+                lesSalles.add(uneSalle);
+            }
+            stmt.close();
+            conn.close();
+            return lesSalles;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur Requete SQL listeSallesCompatiblesAvecUneAsso - " + e.getMessage());
+            return null;
+        }
+    }
+    
+    public static ObservableList<Sport> listeSportsAccueillisParUneSalle(String prefSalle, String prefAsso){
+        ObservableList<Sport> lesSports = FXCollections.observableArrayList();
+        Sport unSport;
+        Connection conn;
+        Statement stmt;
+        ResultSet rs;
+            String pilote = "org.gjt.mm.mysql.Driver";
+            String url = new String("jdbc:mysql://localhost/gymnase");
+        String req;
+        try
+        {
+            Class.forName(pilote);
+            conn = DriverManager.getConnection(url,"root","");
+            stmt = conn.createStatement();
+            req = "SELECT sport.nomSport FROM sport, accueillir, pratiquer "
+                    + "WHERE sport.nomSport = accueillir.nomSportAutorise AND pratiquer.nomSport = accueillir.nomSportAutorise "
+                    + "AND accueillir.refSalle = '"+ prefSalle +"' AND pratiquer.refAsso = '"+ prefAsso +"'";
+            rs = stmt.executeQuery(req);
+            while(rs.next())
+            {
+                unSport = new Sport(rs.getString("nomSport"));
+                lesSports.add(unSport);
+            }
+            stmt.close();
+            conn.close();
+            return lesSports;
+        }
+        catch(Exception e)
+        {
+            System.out.println("Erreur Requete SQL listeSallesCompatiblesAvecUneAsso - " + e.getMessage());
+            return null;
+        }
+    }
 }
