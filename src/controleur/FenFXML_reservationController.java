@@ -1,6 +1,3 @@
-//Association -> Salle (en fonction des sports possibles dans la salle) -> Date & Heure (datePicker et combobox de tranches horaires 18 à 21)
-//Statistique : pourcentage de chaque asso et horaire pour chaque salle
-//Plan occupation : calendrier horaire pour les jour où il y a au moins une réservation
 package controleur;
 import java.io.IOException;
 import java.net.URL;
@@ -42,8 +39,7 @@ public class FenFXML_reservationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         lesAssociations = GestionAssociation.listeAssociations();
         cmbAssociation.setItems(lesAssociations);
-        cmbHeure.getItems().addAll("17:00:00", "18:00:00", "19:00:00","20:00:00","21:00:00");
-        
+        cmbHeure.getItems().addAll("17:00", "18:00", "19:00","20:00","21:00");
     }
     
     @FXML
@@ -70,19 +66,20 @@ public class FenFXML_reservationController implements Initializable {
             }
             else
             {
-            textAAfficher += lesSportsAccueillisParLaSalle.get(i)+", ";
+                textAAfficher += lesSportsAccueillisParLaSalle.get(i)+", ";
             }
         }
         lblSportsPossibles.setText(textAAfficher);
     }
-
+    
+    //Association -> Salle (en fonction des sports possibles dans la salle) -> Date & Heure (datePicker et combobox de tranches horaires 18 à 21)
     @FXML
     public void handleReserver()
     {
         Association monAssociation = (Association)cmbAssociation.getSelectionModel().getSelectedItem();
         Salle maSalle = (Salle)cmbSalle.getSelectionModel().getSelectedItem();
         String maDate = dateDate.getValue().toString();
-        String monHeure = cmbHeure.getSelectionModel().getSelectedItem().toString();
+        String monHeure = cmbHeure.getSelectionModel().getSelectedItem().toString() +":00";
         
         if(GestionReservation.verifReservationPossible(maSalle.getRefSalle(), maDate, monHeure, monAssociation.getRefAsso()) == true)
         {

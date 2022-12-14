@@ -1,5 +1,5 @@
 package controleur;
-
+    //Plan occupation : calendrier horaire pour les jour où il y a au moins une réservation
 import java.io.IOException;
 
 import javafx.application.Application;

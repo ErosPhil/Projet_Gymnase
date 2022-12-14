@@ -36,9 +36,10 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleReserver" text="Effectuer une réservation" />
                </items></Menu>
-            <Menu mnemonicParsing="false" text="Help">
+            <Menu mnemonicParsing="false" text="Plus">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#handleFermer" text="Fermer" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleStatistiques" text="Statistiques de réservation" />
+                  <MenuItem mnemonicParsing="false" text="Plan d'occupation des salles" />
                </items></Menu>
          </menus>
       </MenuBar>

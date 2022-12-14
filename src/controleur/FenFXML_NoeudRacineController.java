@@ -195,8 +195,7 @@ public class FenFXML_NoeudRacineController implements Initializable {
         {
             deuxiemeStage = new Stage();
             deuxiemeStage.setTitle("Effectuer une réservation");
-            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_reservation.fxml"));
-            
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_reservation.fxml")); 
             AnchorPane rootLayout = (AnchorPane)loader.load();
             Scene scene = new Scene(rootLayout);
             deuxiemeStage.setScene(scene);
@@ -209,8 +208,21 @@ public class FenFXML_NoeudRacineController implements Initializable {
     }
     
     @FXML
-    private void handleFermer() // Methode événement sur le menu "Fermer"
+    private void handleStatistiques()
     {
-        System.exit(0);
+        try
+        {
+            deuxiemeStage = new Stage();
+            deuxiemeStage.setTitle("Statistiques");
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_statistiques.fxml"));
+            AnchorPane rootLayout = (AnchorPane)loader.load();
+            Scene scene = new Scene(rootLayout);
+            deuxiemeStage.setScene(scene);
+            deuxiemeStage.show();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Erreur chargement fenetre statistiques : " + e.getMessage());
+        }
     }
 }
