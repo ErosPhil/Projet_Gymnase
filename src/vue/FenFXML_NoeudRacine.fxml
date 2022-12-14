@@ -39,7 +39,7 @@
             <Menu mnemonicParsing="false" text="Plus">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleStatistiques" text="Statistiques de réservation" />
-                  <MenuItem mnemonicParsing="false" text="Plan d'occupation des salles" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleOccupation" text="Occupation des salles" />
                </items></Menu>
          </menus>
       </MenuBar>

@@ -225,4 +225,23 @@ public class FenFXML_NoeudRacineController implements Initializable {
             System.out.println("Erreur chargement fenetre statistiques : " + e.getMessage());
         }
     }
+    
+    @FXML
+    private void handleOccupation()
+    {
+        try
+        {
+            deuxiemeStage = new Stage();
+            deuxiemeStage.setTitle("Occupation");
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_occupation.fxml"));
+            AnchorPane rootLayout = (AnchorPane)loader.load();
+            Scene scene = new Scene(rootLayout);
+            deuxiemeStage.setScene(scene);
+            deuxiemeStage.show();
+        }
+        catch(IOException e)
+        {
+            System.out.println("Erreur chargement fenetre occupation : " + e.getMessage());
+        }
+    }
 }

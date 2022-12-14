@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_occupationController">
+   <children>
+      <ComboBox id="cmbSalle" fx:id="cmbSalle" layoutX="225.0" layoutY="22.0" prefWidth="150.0" />
+      <DatePicker id="dateFrom" fx:id="dateFrom" layoutX="163.0" layoutY="63.0" prefHeight="25.0" prefWidth="125.0" />
+      <DatePicker id="dateTo" fx:id="dateTo" layoutX="313.0" layoutY="63.0" prefHeight="25.0" prefWidth="125.0" />
+      <Label layoutX="294.0" layoutY="67.0" text="au" />
+      <Label layoutX="93.0" layoutY="67.0" text="Période : du" />
+      <Label layoutX="186.0" layoutY="26.0" text="Salle :" />
+      <ListView id="lvOccupations" fx:id="lvOccupations" layoutX="23.0" layoutY="98.0" prefHeight="285.0" prefWidth="555.0" />
+      <Button id="btnAfficher" fx:id="btnAfficher" layoutX="521.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleBoutonAfficher" text="Afficher" />
+   </children>
+</AnchorPane>
