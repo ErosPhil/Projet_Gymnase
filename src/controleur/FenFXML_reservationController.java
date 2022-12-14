@@ -1,4 +1,6 @@
-//Association -> Salle (en fonction des sports possibles dans la salle) -> Date & Heure (datePicker et combobox de tranches horaires 18 à 22)
+//Association -> Salle (en fonction des sports possibles dans la salle) -> Date & Heure (datePicker et combobox de tranches horaires 18 à 21)
+//Statistique : pourcentage de chaque asso et horaire pour chaque salle
+//Plan occupation : calendrier horaire pour les jour où il y a au moins une réservation
 package controleur;
 import java.io.IOException;
 import java.net.URL;
@@ -8,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.DatePicker;
@@ -35,14 +38,12 @@ public class FenFXML_reservationController implements Initializable {
     @FXML
     private Button btnReserver;
     
-    //ObservableList<String>lesHoraires;
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //lesHoraires.addAll("17:00:00", "18:00:00", "19:00:00","20:00:00","21:00:00");
         lesAssociations = GestionAssociation.listeAssociations();
         cmbAssociation.setItems(lesAssociations);
-        //cmbHeure.setItems(lesHoraires);
+        cmbHeure.getItems().addAll("17:00:00", "18:00:00", "19:00:00","20:00:00","21:00:00");
+        
     }
     
     @FXML
@@ -82,9 +83,24 @@ public class FenFXML_reservationController implements Initializable {
         Salle maSalle = (Salle)cmbSalle.getSelectionModel().getSelectedItem();
         String maDate = dateDate.getValue().toString();
         String monHeure = cmbHeure.getSelectionModel().getSelectedItem().toString();
-        GestionReservation.Reserver(maSalle.getRefSalle(),maDate,monHeure,monAssociation.getRefAsso());
-        Stage stage = (Stage) btnReserver.getScene().getWindow();
-        stage.close();
+        
+        if(GestionReservation.verifReservationPossible(maSalle.getRefSalle(), maDate, monHeure, monAssociation.getRefAsso()) == true)
+        {
+            GestionReservation.Reserver(maSalle.getRefSalle(), maDate, monHeure, monAssociation.getRefAsso());
+            Stage stage = (Stage) btnReserver.getScene().getWindow();
+            stage.close();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Rapport réservation");
+            alert.setHeaderText("Réservation effectuée avec succès.");
+            alert.showAndWait();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Rapport erreur");
+            alert.setHeaderText("Réservation impossible, une réservation pour la même salle à la même date à la même heure a déjà été effectuée.");
+            alert.showAndWait();
+        }
     }
     
 }

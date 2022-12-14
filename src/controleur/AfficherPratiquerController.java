@@ -34,10 +34,10 @@ public class AfficherPratiquerController implements Initializable {
     }    
     
     @FXML
-    public void handleChoixAssociation(){ //se déclanche lors du choix d'une association du combobox
-    Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
-    lesSportsPratiquesParLAssociation = GestionPratiquer.listePratiquesPourUneAssociation(monAssociation.getRefAsso());
-    lvSports.setItems(lesSportsPratiquesParLAssociation);
+        public void handleChoixAssociation(){ //se déclanche lors du choix d'une association du combobox
+        Association monAssociation = (Association)cmbAssociations.getSelectionModel().getSelectedItem();
+        lesSportsPratiquesParLAssociation = GestionPratiquer.listePratiquesPourUneAssociation(monAssociation.getRefAsso());
+        lvSports.setItems(lesSportsPratiquesParLAssociation);
     }
     
     @FXML
@@ -45,17 +45,17 @@ public class AfficherPratiquerController implements Initializable {
     {
         try
         {
-        oStage = new Stage();
-        oStage.setTitle("Insertion nouvelle pratique");
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_modificationPratiquer.fxml"));
-        AnchorPane rootLayout = (AnchorPane) loader.load();
-        Scene scene = new Scene(rootLayout);
-        oStage.setScene(scene);
-        oStage.show();
+            oStage = new Stage();
+            oStage.setTitle("Insertion nouvelle pratique");
+            FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/vue/FenFXML_modificationPratiquer.fxml"));
+            AnchorPane rootLayout = (AnchorPane) loader.load();
+            Scene scene = new Scene(rootLayout);
+            oStage.setScene(scene);
+            oStage.show();
         }
         catch (IOException e)
         {
-        System.out.println("Erreur chargement fenetre insert sport: " + e.getMessage());
+            System.out.println("Erreur chargement fenetre insert sport: " + e.getMessage());
         }
     }
     
