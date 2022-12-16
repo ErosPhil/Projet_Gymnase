@@ -1,12 +1,15 @@
 package modele;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Reservation {
     private String refSalle;
-    private String date;
-    private String heure;
+    private LocalDate date;
+    private LocalTime heure;
     private String refAsso;
 
-    public Reservation(String refSalle, String date, String heure, String refAsso) {
+    public Reservation(String refSalle, LocalDate date, LocalTime heure, String refAsso) {
         this.refSalle = refSalle;
         this.date = date;
         this.heure = heure;
@@ -24,19 +27,19 @@ public class Reservation {
         this.refSalle = refSalle;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public String getHeure() {
+    public LocalTime getHeure() {
         return heure;
     }
 
-    public void setHeure(String heure) {
+    public void setHeure(LocalTime heure) {
         this.heure = heure;
     }
 

@@ -8,6 +8,9 @@ import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class GestionReservation {
         public static ObservableList<Salle> listeSallesCompatiblesAvecUneAsso(String prefAsso){
         ObservableList<Salle> lesSalles = FXCollections.observableArrayList();
@@ -77,7 +80,7 @@ public class GestionReservation {
         }
     }
     
-    public static boolean verifReservationPossible(String prefSalle, String pDate, String pHeure, String prefAsso){
+    public static boolean verifReservationPossible(String prefSalle, LocalDate pDate, LocalTime pHeure, String prefAsso){
         Connection conn;
         Statement stmt;
         ResultSet rs;
@@ -109,7 +112,7 @@ public class GestionReservation {
         }
     }
     
-    public static void Reserver(String prefSalle, String pDate, String pHeure, String prefAsso)
+    public static void Reserver(String prefSalle, LocalDate pDate, LocalTime pHeure, String prefAsso)
     {
         Connection conn;
         Statement stmt;

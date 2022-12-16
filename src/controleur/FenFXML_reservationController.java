@@ -17,6 +17,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import modele.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class FenFXML_reservationController implements Initializable {
 
     ObservableList<Association> lesAssociations;
@@ -78,8 +81,8 @@ public class FenFXML_reservationController implements Initializable {
     {
         Association monAssociation = (Association)cmbAssociation.getSelectionModel().getSelectedItem();
         Salle maSalle = (Salle)cmbSalle.getSelectionModel().getSelectedItem();
-        String maDate = dateDate.getValue().toString();
-        String monHeure = cmbHeure.getSelectionModel().getSelectedItem().toString() +":00";
+        LocalDate maDate = dateDate.getValue();
+        LocalTime monHeure = LocalTime.parse(cmbHeure.getSelectionModel().getSelectedItem().toString() +":00");
         
         if(GestionReservation.verifReservationPossible(maSalle.getRefSalle(), maDate, monHeure, monAssociation.getRefAsso()) == true)
         {
